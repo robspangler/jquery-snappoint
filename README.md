@@ -1,4 +1,52 @@
-jquery-snappoint
-================
+# SnapPoint v1.0
 
-jQuery plugin that creates snap points to smoothly scroll a visitor's browser window to blocks of content.
+Easy-to-use jQuery plugin that creates what I call "SnapPoints." A SnapPoint is the beginning of a block of content that you want the browser's window to scroll down to to. Metaphorically stated, SnapPoint attaches a little vacuum to any block level element (e.g. <div>). It sucks the visitors screen down to the top of that content.
+
+##Why Would I Use This?
+
+It's not for every site. You would use this if you had a page or multiple pages that are built around a multiple blocks of content, probably short content.
+
+For an example, please see the demo
+For a live example, please see %%
+
+## How Do I Use It?
+
+To start please include the latest version of jQuery and jquery.snappoint-1.0.js.
+
+```html
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script src="path/to/jquery.snappoint-1.0.js"></script>
+
+<script>
+  $(document).ready(function(){
+    $(".block").snapPoint();
+  });
+</script>
+```
+
+### Options
+
+Here are the customizable options for SnapPoint:
+
+```html
+$(".block").snapPoint({ 
+	scrollDelay: 550,		//Amount of time the visitor has to scroll before the snap point kicks in (ms)
+	scrollSpeed: 90,		//Length of smooth scroll's animation (ms)
+	outerTopOffset: 225,	//Number of pixels for the downward vertical offset (relative to the top of your snapping container)
+	innerTopOffset: 0		//Number of pixels for the upward vertical offset (relative to the top of your snapping container)
+});
+```
+
+## Changelog
+
+### Version 1.0 (12/04/2012)
+* Initial release
+
+## Author
+
+Robert Spangler
+Designer and Front-end Developer
+
+http://www.robspangler.com
+http://www.twitter.com/robertspangler
+http://www.linkedin.com/in/robertspangler
