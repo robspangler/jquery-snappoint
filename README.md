@@ -1,6 +1,6 @@
 # SnapPoint v1.0
 
-Easy-to-use jQuery plugin that creates what I call "SnapPoints." A SnapPoint is the beginning of a block of content that you want the browser's window to scroll down to to. Metaphorically stated, SnapPoint attaches a little vacuum to any block level element (e.g. <div>). It sucks the visitors screen down to the top of that content.
+Easy-to-use jQuery plugin that creates what I call "SnapPoints." A SnapPoint is the beginning of a block of content that you want the browser's window to scroll down to to. Metaphorically stated, SnapPoint attaches a little vacuum to any block level element (e.g. &lt;div&gt;). It sucks the visitors screen down to the top of that content.
 
 ##Why Would I Use This?
 
