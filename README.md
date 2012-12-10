@@ -40,7 +40,7 @@ $(".block").snapPoint({
 ## Changelog
 
 ### Version 1.05 (12/04/2012)
-* Bug fixes for Firefox & IE (browsers using <html> vs. <body>)
+* Bug fixes for Firefox & IE (browsers using &lt;html&gt; vs. &lt;body&gt;)
 
 ### Version 1.0 (12/04/2012)
 * Initial release
