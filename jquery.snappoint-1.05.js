@@ -1,6 +1,6 @@
 /*
  * SnapPoint jQuery Plugin
- * Version 1.0
+ * Version 1.05
  * Author: Robert Spangler (http://robspangler.com/)
  *
  * Copyright (c) 2012
@@ -36,10 +36,10 @@
 				var position = $(this).position();
 				
 				elementPos = position.top;
-				windowPos = $('body').scrollTop();
+				windowPos = $(jQuery.browser.webkit ? "body" : "html").scrollTop(); /*webkit uses body, others use html*/
 				
 				if ( windowPos + options.outerTopOffset >= elementPos && elementPos + options.innerTopOffset >= windowPos && windowPos != elementPos ) {
-					$('html,body').animate({
+					$(jQuery.browser.webkit ? "body" : "html").animate({
 						scrollTop: elementPos
 					}, options.scrollSpeed);
 				}
