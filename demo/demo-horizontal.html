@@ -7,44 +7,62 @@
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 		<script src="../jquery.snappoint-1.5.js"></script>
 		<script>
-		  $(document).ready(function(){
-			$(".block").snapPoint();
-		  });
+			$(document).ready(function(){
+				$('.block').snapPoint();
+
+				// get the width and height
+				// of the browser screen
+				var w = window.innerWidth;
+				var h = window.innerHeight;
+				var blocksNum = $('.block').size();
+
+				$('#wrapper').css({
+					'width': w*blocksNum
+				});
+
+				// align blocks horizontally
+				for(var i=0; i<blocksNum; i++) {
+					$( '.block' ).each(function(i) {
+						$(this).css({
+							'width': w-40,
+							'top': 0 + 'px',
+							'left': i*w
+						});
+					});	
+				}
+
+			});
 		</script>
 		
 		<style>
 			/*Basic Page Styles*/
-			body { padding: 0 0 400px; font: 1em/1.4 'Helvetica Neue', sans-serif; }
-			p { margin: 0 0 18px; }
-			.presentation { height: 200px; background: url('presentation.png') repeat-x left bottom; }
-			.block { height: 360px; padding: 20px; border: 1px solid #555; }
+			body { margin: 0px 0px 0px 0px; font: 1em/1.4 'Helvetica Neue', sans-serif; }
+			.block { position: absolute; height: 360px; padding: 0 20px 0 20px; border: 1px solid #555; }
 		</style>
 	</head>
 	<body>
 
 		<div id="wrapper">
-		
-			<div class="intro">
+	
+			<div class="intro block">
 				<h1>SnapPoint.js Demo</h1>
 				<p>Easy-to-use jQuery plugin that "SnapPoints." A SnapPoint is the beginning of a block of content that you want the browser's window to scroll down to to. Metaphorically stated, SnapPoint attaches a little vacuum to any block level element (e.g. &lt;div&gt;). It sucks the visitors screen down to the top of that content, or if paging is horizontally it sucks the content to the left of the screen.</p>
 			</div>
 		
-			<div class="presentation">&nbsp;</div>
 			<div class="block">
-				<p>#1 This is a block of content</p>
+				<p>#1 This is a block of content<br />Scroll to the Right</p>
 			</div><!--/.block-->
 		
-			<div class="presentation">&nbsp;</div>
 			<div class="block">
-				<p>#2 This is a second block of content</p>
+				<p>#2 This is a second block of content<br />Scroll to the Right</p>
 			</div><!--/.block-->
 		
-			<div class="presentation">&nbsp;</div>
 			<div class="block">
 				<p>#3 This is a third block of content<br />Scroll to the Right</p>
 			</div><!--/.block-->
-		
+
 		</div><!--/#wrapper-->
+	
 
 	</body>
 </html>
