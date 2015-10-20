@@ -15,6 +15,12 @@
  *	http://cargocollective.com/kenfrederick/
  *	http://kenfrederick.blogspot.com/
  *
+ *
+ *  Callback and easing mode added by
+ *	
+ *	David Godzsak
+ *  godzsakdavid@gmail.com
+ *
  */
 (function( $ ){
 
@@ -31,7 +37,7 @@
 
 	var snapPointTimer = null;
 	
-	$.fn.snapPoint = function(options) {
+	$.fn.snapPoint = function(options,callback) {
 		
 		var defaults = { 
 			scrollDelay: 550,		// Amount of time the visitor has to scroll before the snap point kicks in (ms)
@@ -39,8 +45,10 @@
 			outerTopOffset: 200,	// Number of pixels for the downward vertical offset (relative to the top of your snapping container)
 			innerTopOffset: 0,		// Number of pixels for the upward vertical offset (relative to the top of your snapping container)
 			outerLeftOffset: 200,	// Number of pixels for the outer horizontal offset (relative to the right of your snapping container)
-			innerLeftOffset: 0		// Number of pixels for the inner horizontal offset (relative to the left of your snapping container)
+			innerLeftOffset: 0,		// Number of pixels for the inner horizontal offset (relative to the left of your snapping container)
+			ease: 'swing'
 		};
+
 		    options = $.extend({}, defaults, options);
 		    elArray = this;
 
@@ -67,7 +75,7 @@
 					 windowPosTop != elementPosTop ) {
 					$(jQuery.browser.webkit ? 'body' : 'html').animate({
 						scrollTop: elementPosTop
-					}, options.scrollSpeed);
+					}, options.scrollSpeed,options.ease,callback);
 				}
 
 
@@ -79,10 +87,8 @@
 					 windowPosLeft != elementPosLeft ) {
 					$(jQuery.browser.webkit ? 'body' : 'html').animate({
 						scrollLeft: elementPosLeft
-					}, options.scrollSpeed);
+					}, options.scrollSpeed,options.ease,callback);
 				}
-
-
 
 			});
 		}
